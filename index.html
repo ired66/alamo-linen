@@ -4,99 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alamo Linen Laundry Services | Professional Laundry in Brampton</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23add8e6'/></svg>" type="image/svg+xml">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23000000'/></svg>" type="image/svg+xml">
+
     <meta name="description" content="Alamo Linen Laundry Services offers commercial linen cleaning, uniform cleaning, and wash & fold services in Brampton. Fast, reliable, and professional.">
     <meta name="keywords" content="laundry service Brampton, linen cleaning, wash and fold, commercial laundry, uniform cleaning">
     <meta name="author" content="Alamo Linen Laundry Services">
 
     <style>
         :root {
-            --primary-blue: #0288d1; <!--a-->
-            --hover-blue: #0277bd;
-            --light-blue: #e1f5fe;
+            --primary: #000000;      /* Solid Black */
+            --secondary: #333333;    /* Dark Grey for hover */
+            --accent: #e0e0e0;       /* Light grey for borders */
+            --bg-light: #f5f5f5;     /* Soft grey background */
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
             --white: #ffffff;
-            --text-dark: #333;
-            --text-light: #666;
-            --transition: all 0.3s ease;
+            --border: #dcdcdc;
+            --transition: all 0.3s ease-in-out;
+            --font-body: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-fancy: 'Georgia', 'Times New Roman', Times, serif; /* Elegant serif font */
         }
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--font-body);
             background: var(--white);
-            color: var(--text-dark);
+            color: var(--text-main);
             line-height: 1.6;
         }
 
+        h1, h2, h3 {
+            font-family: var(--font-fancy);
+        }
+
+        /* HEADER & NAVIGATION */
         header {
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         nav {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: auto;
-            padding: 1rem 20px;
+            padding: 1.2rem 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-family: var(--font-fancy);
+            color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
         }
 
         .nav-links a {
-            color: var(--text-dark);
+            color: var(--text-main);
             font-weight: 600;
             text-decoration: none;
+            font-size: 1rem;
             transition: var(--transition);
         }
 
         .nav-links a:hover {
-            color: var(--primary-blue);
+            color: var(--text-muted);
         }
 
         .cta-btn {
-            background: var(--primary-blue);
+            background: var(--primary);
             color: var(--white) !important;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: bold;
+            padding: 12px 28px;
+            border-radius: 0px; /* Sharper edges for a high-end look */
+            font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
             display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: 1px solid var(--primary);
         }
 
         .cta-btn:hover {
-            background: var(--hover-blue);
-            box-shadow: 0 4px 12px rgba(2, 136, 209, 0.3);
+            background: var(--white);
+            color: var(--primary) !important;
         }
 
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 5px;
+            gap: 6px;
         }
 
         .hamburger div {
-            width: 25px;
+            width: 30px;
             height: 3px;
-            background: var(--primary-blue);
+            background: var(--primary);
             border-radius: 3px;
         }
 
@@ -105,189 +122,275 @@
             flex-direction: column;
             background: var(--white);
             padding: 20px;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--border);
             text-align: center;
         }
 
         .mobile-menu a {
             padding: 15px 0;
-            color: var(--text-dark);
+            color: var(--text-main);
             text-decoration: none;
             font-size: 1.1rem;
             font-weight: 600;
+            border-bottom: 1px solid var(--accent);
+        }
+        
+        .mobile-menu a.cta-btn {
+            margin-top: 15px;
+            border-bottom: none;
         }
 
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('image_7b0db5.png');
+            position: relative;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)), url('image_7b0db5.jpg');
             background-size: cover;
             background-position: center;
             text-align: center;
-            padding: 140px 20px;
-            min-height: 300px;
+            padding: 180px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            color: var(--primary-blue);
+            font-size: 4.5rem;
+            color: var(--primary);
             margin-bottom: 20px;
-            font-weight: 800;
-            text-shadow: 0px 0px 10px rgba(255,255,255,0.8);
+            font-weight: normal;
+            letter-spacing: -1px;
+            line-height: 1.1;
         }
 
         .hero p {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto 40px auto;
-            color: var(--text-dark);
+            color: var(--text-muted);
             font-size: 1.3rem;
-            font-weight: 600;
-            text-shadow: 0px 0px 8px rgba(255,255,255,0.8);
+            font-weight: 400;
         }
 
-        .services {
-            max-width: 1100px;
-            margin: 80px auto;
-            padding: 0 20px;
+        /* SECTION HEADERS */
+        .section-header {
             text-align: center;
+            margin-bottom: 60px;
         }
 
-        .services h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--primary-blue);
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+        
+        .section-header hr {
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary);
+            border: none;
+            margin: 0 auto;
+        }
+
+        /* SERVICES GRID */
+        .services-section {
+            background-color: var(--white);
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
 
         .service-card {
             background: var(--white);
-            padding: 40px 30px;
-            border-radius: 12px;
-            border: 1px solid #e1f5fe;
+            padding: 50px 40px;
+            border: 1px solid var(--border);
             transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            border-color: var(--primary);
         }
 
         .service-card h3 {
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: normal;
+        }
+        
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
         }
 
-        .form-section {
-            padding: 80px 20px;
+        /* SPLIT LAYOUT (FORMS & INFO) */
+        .split-section {
+            padding: 100px 20px;
+        }
+        
+        .bg-light {
+            background-color: var(--bg-light);
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--primary-blue);
-        }
-
-        .form-container {
-            max-width: 700px;
+        .split-container {
+            max-width: 1200px;
             margin: 0 auto;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
+        .text-content h2 {
+            font-size: 2.6rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .text-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .form-card {
+            background: var(--white);
+            padding: 45px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        /* FORM ELEMENTS */
         .form-group {
             margin-bottom: 20px;
-            text-align: left;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: var(--text-dark);
+            color: var(--text-main);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 14px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
+            padding: 14px 16px;
+            border: 1px solid #ccc;
             font-family: inherit;
             box-sizing: border-box;
             font-size: 1rem;
+            background-color: #fafafa;
+            transition: var(--transition);
+            border-radius: 0;
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(2, 136, 209, 0.1);
+            border-color: var(--primary);
+            background-color: var(--white);
         }
 
         button.submit-btn {
             width: 100%;
             padding: 16px;
-            background: var(--primary-blue);
+            background: var(--primary);
             color: var(--white);
-            border: none;
-            border-radius: 8px;
+            border: 1px solid var(--primary);
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             transition: var(--transition);
             margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         button.submit-btn:hover {
-            background: var(--hover-blue);
-            transform: scale(1.02);
+            background: var(--white);
+            color: var(--primary);
         }
 
-        .map-container {
-            max-width: 1100px;
-            margin: 80px auto;
-            padding: 0 20px;
-            text-align: center;
+        /* MAP CONTAINER */
+        .map-box {
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 30px;
+            border: 1px solid var(--border);
         }
 
         iframe {
             width: 100%;
-            height: 400px;
+            height: 350px;
             border: 0;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: block;
         }
 
+        /* FOOTER */
         footer {
-            background: #01579b;
-            color: var(--white);
+            background: var(--primary);
+            color: #dddddd;
+            padding: 70px 20px 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
             text-align: center;
-            padding: 60px 20px;
         }
 
         footer h3 {
-            margin-bottom: 20px;
-            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 2rem;
+            font-weight: normal;
+            letter-spacing: 1px;
         }
 
         footer p {
-            margin: 5px 0;
-            opacity: 0.9;
+            margin: 10px 0;
+            font-size: 1.05rem;
+            color: #aaaaaa;
+        }
+        
+        .footer-bottom {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .split-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hamburger { display: flex; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero { padding: 80px 20px; }
-            .form-container { padding: 25px; }
+            .hero h1 { font-size: 2.8rem; }
+            .hero { padding: 120px 20px; }
+            .section-header h2 { font-size: 2.2rem; }
+            .form-card { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -319,93 +422,117 @@
     <a href="#booking" class="cta-btn">Schedule a Pickup</a>
 </section>
 
-<section id="services" class="services">
-    <h2>Our Professional Services</h2>
-    <div class="service-grid">
-        <div class="service-card">
-            <h3>Commercial Linen</h3>
-            <p>Tailored solutions for hotels and restaurants. We handle bed sheets, towels, and table linens with industrial-grade care to ensure a 5-star experience for your guests.</p>
+<section id="services" class="services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Professional Services</h2>
+            <hr>
         </div>
-        <div class="service-card">
-            <h3>Uniform Cleaning</h3>
-            <p>Keep your team looking sharp. Our specialized cleaning process removes tough stains while preserving fabric integrity for medical, hospitality, and corporate uniforms.</p>
-        </div>
-        <div class="service-card">
-            <h3>Wash & Fold</h3>
-            <p>Premium everyday laundry for busy residents. We sort, wash, dry, and fold your clothes to perfection, giving you back the time you deserve.</p>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Commercial Linen</h3>
+                <p>Tailored solutions for hotels and restaurants. We handle bed sheets, towels, and table linens with industrial-grade care to ensure a 5-star experience for your guests.</p>
+            </div>
+            <div class="service-card">
+                <h3>Uniform Cleaning</h3>
+                <p>Keep your team looking sharp. Our specialized cleaning process removes tough stains while preserving fabric integrity for medical, hospitality, and corporate uniforms.</p>
+            </div>
+            <div class="service-card">
+                <h3>Wash & Fold</h3>
+                <p>Premium everyday laundry for busy residents. We sort, wash, dry, and fold your clothes to perfection, giving you back the time you deserve.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="booking" class="form-section" style="background: var(--light-blue);">
-    <h2 class="section-title">Book a Service / Pickup</h2>
-    <div class="form-container">
-        <form onsubmit="sendBookingEmail(event)">
-            <div class="form-group">
-                <label>Full Name</label>
-                <input id="b-name" placeholder="John Doe" required>
-            </div>
-            <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" id="b-email" placeholder="john@example.com" required>
-            </div>
-            <div class="form-group">
-                <label>Service Type</label>
-                <select id="b-service">
-                    <option>Commercial Linen</option>
-                    <option>Uniform Cleaning</option>
-                    <option>Wash & Fold</option>
-                    <option>Other</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Preferred Date</label>
-                <input type="date" id="b-date" required>
-            </div>
-            <div class="form-group">
-                <label>Special Instructions</label>
-                <textarea id="b-notes" rows="3" placeholder="Any specific requirements..."></textarea>
-            </div>
-            <button class="submit-btn">Request Booking</button>
-        </form>
+<section id="booking" class="split-section bg-light">
+    <div class="split-container">
+        <div class="text-content">
+            <h2>Request a Quote / Pickup</h2>
+            <p>Experience reliable, high-quality laundry solutions tailored to your operational needs. Fill out our service request form, and our team will get back to you promptly to schedule your pickup or discuss pricing.</p>
+            <p style="font-weight: 600; color: var(--primary);">✓ Consistent Quality<br>✓ Dependable Results<br>✓ Professional Service</p>
+        </div>
+        <div class="form-card">
+            <form onsubmit="sendBookingEmail(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input id="b-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="b-email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Service Type</label>
+                    <select id="b-service">
+                        <option>Commercial Linen</option>
+                        <option>Uniform Cleaning</option>
+                        <option>Wash & Fold</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Date</label>
+                    <input type="date" id="b-date" required>
+                </div>
+                <div class="form-group">
+                    <label>Special Instructions</label>
+                    <textarea id="b-notes" rows="3" placeholder="Any specific requirements..."></textarea>
+                </div>
+                <button class="submit-btn">Submit Request</button>
+            </form>
+        </div>
     </div>
 </section>
 
-<section id="contact" class="form-section">
-    <h2 class="section-title">Get In Touch</h2>
-    <div class="form-container">
-        <form onsubmit="sendContactEmail(event)">
-            <div class="form-group">
-                <label>Name</label>
-                <input id="c-name" placeholder="Your Name" required>
+<section id="contact" class="split-section">
+    <div class="split-container" style="direction: rtl;">
+        <div class="text-content" style="direction: ltr;">
+            <h2>Contact & Facility Info</h2>
+            <p>Our facility is equipped to handle high-volume environments where cleanliness and consistency are essential. Reach out to us today.</p>
+            
+            <p><strong>Address:</strong><br>140 Advance Blvd Unit 9<br>Brampton, ON L6T 4Z8</p>
+            <p><strong>Email:</strong> menama_rio@yahoo.com<br><strong>Phone:</strong> 647‑549‑8605</p>
+
+            <div class="map-box">
+                <iframe 
+                    loading="lazy"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.2882101676834!2d-79.6961646!3d43.683794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3f798e370a2f%3A0x7d6f51c728e5c54d!2s140%20Advance%20Blvd%20Unit%209%2C%20Brampton%2C%20ON%20L6T%204Z8!5e0!3m2!1sen!2sca!4v1700000000000"
+                    allowfullscreen>
+                </iframe>
             </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" id="c-email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <label>Message</label>
-                <textarea id="c-message" rows="5" placeholder="How can we help you today?" required></textarea>
-            </div>
-            <button class="submit-btn">Send Message</button>
-        </form>
+        </div>
+        <div class="form-card" style="direction: ltr;">
+            <h3 style="color: var(--primary); margin-top:0; margin-bottom: 25px; font-size: 1.8rem;">Get In Touch</h3>
+            <form onsubmit="sendContactEmail(event)">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input id="c-name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" id="c-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Message</label>
+                    <textarea id="c-message" rows="5" placeholder="How can we help you today?" required></textarea>
+                </div>
+                <button class="submit-btn">Send Message</button>
+            </form>
+        </div>
     </div>
 </section>
-
-<div class="map-container">
-    <h2 style="color: var(--primary-blue); margin-bottom:30px;">Visit Our Facility</h2>
-    <iframe 
-        loading="lazy"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.2882101676834!2d-79.6961646!3d43.683794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3f798e370a2f%3A0x7d6f51c728e5c54d!2s140%20Advance%20Blvd%20Unit%209%2C%20Brampton%2C%20ON%20L6T%204Z8!5e0!3m2!1sen!2sca!4v1700000000000"
-        allowfullscreen>
-    </iframe>
-</div>
 
 <footer>
-    <h3>Alamo Linen Laundry Services</h3>
-    <p>140 Advance Blvd Unit 9, Brampton, ON L6T 4Z8</p>
-    <p>Email: menama_rio@yahoo.com | Phone: 647‑549‑8605</p>
-    <p style="margin-top: 20px; font-size: 0.9rem;">© 2024 Alamo Linen Services. All rights reserved.</p>
+    <div class="footer-content">
+        <h3>Alamo Linen Laundry Services</h3>
+        <p>140 Advance Blvd Unit 9, Brampton, ON L6T 4Z8</p>
+        <p>menama_rio@yahoo.com | 647‑549‑8605</p>
+        
+        <div class="footer-bottom">
+            <p>© 2024 Alamo Linen Services. All rights reserved.</p>
+        </div>
+    </div>
 </footer>
 
 <script>
