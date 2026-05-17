@@ -13,17 +13,17 @@
 
     <style>
         :root {
-            --primary: #000000;      /* Solid Black */
-            --secondary: #333333;    /* Dark Grey for hover */
-            --accent: #e0e0e0;       /* Light grey for borders */
-            --bg-light: #f5f5f5;     /* Soft grey background */
+            --primary: #000000;      
+            --secondary: #333333; 
+            --accent: #e0e0e0;      
+            --bg-light: #f5f5f5;    
             --text-main: #1a1a1a;
             --text-muted: #555555;
             --white: #ffffff;
             --border: #dcdcdc;
             --transition: all 0.3s ease-in-out;
             --font-body: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            --font-fancy: 'Georgia', 'Times New Roman', Times, serif; /* Elegant serif font */
+            --font-fancy: 'Georgia', 'Times New Roman', Times, serif; 
         }
 
         body {
@@ -87,7 +87,7 @@
             background: var(--primary);
             color: var(--white) !important;
             padding: 12px 28px;
-            border-radius: 0px; /* Sharper edges for a high-end look */
+            border-radius: 0px; 
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
@@ -143,7 +143,6 @@
         /* HERO SECTION */
         .hero {
             position: relative;
-            /* Updated background image using the generated image */
             background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)), url('threeimage.png');
             background-size: cover;
             background-position: center;
@@ -330,12 +329,12 @@
         /* IMAGE BREAK / BANNER (NEW SECTION) */
         .image-break {
             width: 100%;
-            height: 400px; /* Adjust height as needed */
+            height: 400px; 
             background-color: var(--accent);
-            background-image: url('twoimage.png'); /* Change this to your new image file */
+            background-image: url('twoimage.png'); 
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Creates a nice parallax scrolling effect */
+            background-attachment: fixed; 
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
@@ -405,7 +404,10 @@
             .hero { padding: 120px 20px; }
             .section-header h2 { font-size: 2.2rem; }
             .form-card { padding: 30px 20px; }
-            .image-break { height: 250px; } /* Smaller banner height on mobile */
+            .image-break { 
+                height: 250px; 
+                background-attachment: scroll;
+                         } 
         }
     </style>
 </head>
