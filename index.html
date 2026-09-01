@@ -532,18 +532,23 @@
             <p style="font-weight: 600; color: var(--primary);">✓ Consistent Quality<br>✓ Dependable Results<br>✓ Professional Service</p>
         </div>
         <div class="form-card">
-            <form onsubmit="sendBookingEmail(event)">
+            <!-- Web3Forms Endpoint Fix -->
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="New Booking Request - Alamo Linen">
+                <input type="hidden" name="from_name" value="Alamo Linen Website">
+
                 <div class="form-group">
                     <label>Full Name</label>
-                    <input id="b-name" placeholder="John Doe" required>
+                    <input type="text" name="name" placeholder="John Doe" required>
                 </div>
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" id="b-email" placeholder="john@example.com" required>
+                    <input type="email" name="email" placeholder="john@example.com" required>
                 </div>
                 <div class="form-group">
                     <label>Service Type</label>
-                    <select id="b-service">
+                    <select name="service">
                         <option>Commercial Linen</option>
                         <option>Uniform Cleaning</option>
                         <option>Wash & Fold</option>
@@ -553,13 +558,13 @@
                 </div>
                 <div class="form-group">
                     <label>Preferred Date</label>
-                    <input type="date" id="b-date" required>
+                    <input type="date" name="date" required>
                 </div>
                 <div class="form-group">
                     <label>Special Instructions</label>
-                    <textarea id="b-notes" rows="3" placeholder="Any specific requirements..."></textarea>
+                    <textarea name="notes" rows="3" placeholder="Any specific requirements..."></textarea>
                 </div>
-                <button class="submit-btn">Submit Request</button>
+                <button type="submit" class="submit-btn">Submit Request</button>
             </form>
         </div>
     </div>
@@ -586,20 +591,25 @@
         </div>
         <div class="form-card" style="direction: ltr;">
             <h3 style="color: var(--primary); margin-top:0; margin-bottom: 25px; font-size: 1.8rem;">Get In Touch</h3>
-            <form onsubmit="sendContactEmail(event)">
+            <!-- Web3Forms Endpoint Fix -->
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="Contact Inquiry - Alamo Linen">
+                <input type="hidden" name="from_name" value="Alamo Linen Website">
+
                 <div class="form-group">
                     <label>Your Name</label>
-                    <input id="c-name" placeholder="Enter your name" required>
+                    <input type="text" name="name" placeholder="Enter your name" required>
                 </div>
                 <div class="form-group">
                     <label>Your Email</label>
-                    <input type="email" id="c-email" placeholder="Enter your email" required>
+                    <input type="email" name="email" placeholder="Enter your email" required>
                 </div>
                 <div class="form-group">
                     <label>Your Message</label>
-                    <textarea id="c-message" rows="5" placeholder="How can we help you today?" required></textarea>
+                    <textarea name="message" rows="5" placeholder="How can we help you today?" required></textarea>
                 </div>
-                <button class="submit-btn">Send Message</button>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
     </div>
@@ -621,30 +631,6 @@
 function toggleMenu() {
     const menu = document.getElementById("mobileMenu");
     menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-
-function sendBookingEmail(event) {
-    event.preventDefault();
-    const name = document.getElementById("b-name").value;
-    const email = document.getElementById("b-email").value;
-    const service = document.getElementById("b-service").value;
-    const date = document.getElementById("b-date").value;
-    const notes = document.getElementById("b-notes").value;
-
-    const subject = encodeURIComponent("New Booking Request - Alamo Linen");
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\nDate: ${date}\nNotes: ${notes}`);
-    window.location.href = `mailto:mario.mena@alamolinen.com?subject=${subject}&body=${body}`;
-}
-
-function sendContactEmail(event) {
-    event.preventDefault();
-    const name = document.getElementById("c-name").value;
-    const email = document.getElementById("c-email").value;
-    const message = document.getElementById("c-message").value;
-
-    const subject = encodeURIComponent("Contact Inquiry - Alamo Linen");
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:mario.mena@alamolinen.com?subject=${subject}&body=${body}`;
 }
 </script>
 
